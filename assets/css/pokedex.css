@@ -79,23 +79,39 @@
 }
 
 .pokemon {
+    height: 16em;
     display: flex;
     flex-direction: column;
     margin: .5rem;
-    padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.pokemon .wallpaper {
+    height: 16em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url("/assets/img/pokeball.svg");
+    background-position: top 0em right -1em;
+    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
+    background-size: 10em;
+    padding: 1em 2em;
+    border-radius: 1em;
 }
 
 .pokemon .number {
     color: #000;
     opacity: .3;
     text-align: right;
-    font-size: .625rem;
+    font-size: 2.5em;
 }
 
 .pokemon .name {
     text-transform: capitalize;
     color: #fff;
+    font-size: 2.5em;
     margin-bottom: .25rem;
 }
 
@@ -114,17 +130,18 @@
 
 .pokemon .detail .types .type {
     color: #fff;
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
+    padding: 0.5em 1.5em;
+    margin: 0.5em 0;
+    font-size: 1em;
     border-radius: 1rem;
     filter: brightness(1.1);
     text-align: center;
+    box-shadow: 1px 1px 5px #000;
 }
 
 .pokemon .detail img {
     max-width: 100%;
-    height: 70px;
+    height: 8em;
 }
 
 .pagination {
@@ -139,16 +156,43 @@
 .pagination button {
     padding: .25rem .5rem;
     margin: .25rem 0;
-    font-size: .625rem;
+    font-size: .925rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 480px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .pokemon {
+        height: auto;
+    }
+
+    .pokemon .wallpaper {
+        height: auto;
+        display: block;
+    }
+
+    .pokemon .detail .types .type {
+        margin: 0.5em 0;
+        font-size: .7em;
+    }
+
+    .pokemon .number {
+        font-size: 1em;
+    }
+
+    .pokemon .name {
+        font-size: 1em;
+    }
+
+    .pokemon .detail img {
+        height: 70px;
     }
 }
 

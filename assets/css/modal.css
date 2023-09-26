@@ -1,0 +1,279 @@
+.modalContainer {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000d9;
+}
+
+.modal {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal.active + .modalContainer {
+  display: block;
+}
+
+.pokemonDetail .pokeSpecie {
+  border-radius: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-image: url("/assets/img/pokeball.svg");
+  background-position: top 0.5em right 1em;
+  background-blend-mode: luminosity;
+  background-repeat: no-repeat;
+  background-size: 10em;
+  position: relative;
+}
+
+.pokemonDetail .pokemon {
+  cursor: auto;
+}
+
+.pokemonDetail .pokemon:hover {
+  transform: none;
+}
+
+.pokemonDetail .detail {
+  flex-direction: column;
+  padding: 0 2em;
+}
+
+.pokemonDetail .identification {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.pokemonDetail .pokemon .name {
+  font-size: 2em;
+}
+
+.pokemonDetail .pokemon .number {
+  font-size: 1.5em;
+}
+
+.pokemonDetail .types {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+
+.pokemonDetail .pokemon .types .type {
+  margin: 0.25rem 5px 0 0;
+}
+
+.pokemonDetail .detail img {
+  height: 110px;
+  transform: scale(-1, 1);
+  display: block;
+  width: 100%;
+}
+
+.pokemonDetail .detail img:hover {
+  animation: dancePoke 1s infinite;
+}
+
+@keyframes dancePoke {
+  0% {
+    transform: rotate(0deg) scale(-1, 1);
+  }
+  25% {
+    transform: rotate(15deg) scale(-1, 1);
+  }
+  75% {
+    transform: rotate(-15deg) scale(-1, 1);
+  }
+  100% {
+    transform: rotate(0deg) scale(-1, 1);
+  }
+}
+
+.pokeContainer {
+  position: relative;
+  width: 200px;
+}
+
+.pokeContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 30%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: blur(5px);
+}
+
+.menu {
+  width: 100%;
+  padding-bottom: 0.8rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.menu ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  width: 50%;
+  text-align: center;
+}
+
+.menu ul li:nth-child(1) {
+  border-top-left-radius: 20px;
+}
+
+.menu ul li:nth-child(1) a {
+  margin-left: -0.5em;
+}
+
+.menu ul li:nth-child(2) {
+  border-top-right-radius: 20px;
+}
+
+.menu ul li:nth-child(2) a {
+  margin-left: 0.5em;
+}
+
+.menu ul li.active {
+  background-color: #2f4f4f;
+}
+
+.menu ul li:hover {
+  background-color: #d7d7d7;
+}
+
+.menu ul li.active:hover {
+  background-color: #2f4f4f;
+}
+
+.menu li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+  padding: 0.5em 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+td,
+th {
+  padding: 6px 0px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+td {
+  font-size: 0.875rem;
+}
+
+tr td:first-child {
+  color: #5b5858;
+}
+
+progress {
+  appearance: inherit;
+  height: 8px;
+  width: 100px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #39d331;
+  border-radius: 5px;
+}
+
+.menu,
+#aboutTable,
+#baseStatsTable {
+  background-color: #f3efef;
+  position: relative;
+  z-index: 9;
+}
+
+#aboutTable,
+#baseStatsTable {
+  border-radius: 0 0 1rem 1rem;
+  padding: 0px 15px 10px 15px;
+}
+
+#baseStatsTable {
+  display: none;
+}
+
+.closeModal {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  transition: 0.4s ease;
+}
+
+.closeModal:hover {
+  transform: scale(1.05);
+  background-color: #ff0000;
+}
+
+.visible {
+  display: block;
+}
+
+@media screen and (min-width: 380px) {
+  progress {
+    width: 130px;
+  }
+
+  td {
+    font-size: 1rem;
+  }
+}
